@@ -1,0 +1,77 @@
+img {
+	float: left;
+	width: 60%;
+}
+
+hr {
+	background-color: whitesmoke;
+}
+footer {
+	background-color: lightblue;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	padding: 10px;
+}
+
+h2.main-title {
+	text-transform: uppercase;
+}
+h1.town {
+	text-transform: capitalize;
+	padding: 1%;
+}
+#left-panel {
+	float: left;
+}
+#right-panel {
+	float: left;
+	font-size: 22px;
+	margin-left: 4%;
+	margin-right: 4%;
+	width: 25%;
+}
+
+#temperature-info {
+	float: right;
+	margin-top: 20%;
+}
+.feels {
+	font-size: 1.7em;
+}
+.temp {
+	text-align: center;
+	font-weight: bold;
+	font-size: 4em; /* 4 times the default font 10pt = 10 * 4 => 40pt*/
+	margin-bottom: 5px;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+.high {
+	color: green;
+}
+.mid {
+	color: orange;
+}
+.low {
+	color: red;
+}
+.row {
+	padding: 4% 0 4% 0;
+}
+.border {
+	border: green 1px solid;
+	border-radius: 20px;
+	overflow: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
