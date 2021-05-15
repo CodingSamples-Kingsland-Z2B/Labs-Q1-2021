@@ -1,0 +1,26 @@
+let inputArray = JSON.parse(input);
+  let headerArray = [ "  <tr>"];
+  let finalHTMLArray = ["<table>"];
+  let objKeys = Object.keys(inputArray[0]);
+
+  for (eachKey of objKeys) {
+    headerArray.push(`<th>${eachKey}</th>`);
+  }
+  headerArray.push(`</tr>`);
+  let tableHeaderHTML = headerArray.join("")
+  finalHTMLArray.push(tableHeaderHTML);
+  
+  for (i = 0; i < inputArray.length; i++) {
+    //console.log("The original object is ", inputArray[i]);
+    let tempArray = Object.values(inputArray[i]);
+    let rowHTML = ['  <tr>']
+    for (eachItem of tempArray) {
+      rowHTML.push(`<td>${eachItem }</td>`)
+    }
+    rowHTML.push('</tr>');
+    let tempRowHTML = rowHTML.join("");
+    finalHTMLArray.push(tempRowHTML);
+  }
+  finalHTMLArray.push('</table>')
+  console.log(finalHTMLArray.join(""))
+  return (finalHTMLArray.join(''));

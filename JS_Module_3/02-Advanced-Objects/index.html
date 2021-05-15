@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>From JSON To HTML Table Title Has Changed! </title>
+ <style>
+ table,th{
+ border: groove;
+ border-collapse: collapse; 
+  }
+ td{
+ border: 1px solid black;
+ }
+ td,th{
+ padding: 5px;
+ }
+ </style>
+</head>
+<body>
+ <div id="wrapper">
+ </div>
+ <script>
+ function fromJSONToHTMLTable(input){
+ //Write your code here
+ let inputArray = JSON.parse(input);
+  let headerArray = [ "  <tr>"];
+  let finalHTMLArray = ["<table>"];
+  let objKeys = Object.keys(inputArray[0]);
+
+  for (eachKey of objKeys) {
+    headerArray.push(`<th>${eachKey}</th>`);
+  }
+  headerArray.push(`</tr>`);
+  let tableHeaderHTML = headerArray.join("")
+  finalHTMLArray.push(tableHeaderHTML);
+  
+  for (i = 0; i < inputArray.length; i++) {
+    //console.log("The original object is ", inputArray[i]);
+    let tempArray = Object.values(inputArray[i]);
+    let rowHTML = ['  <tr>']
+    for (eachItem of tempArray) {
+      rowHTML.push(`<td>${eachItem }</td>`)
+    }
+    rowHTML.push('</tr>');
+    let tempRowHTML = rowHTML.join("");
+    finalHTMLArray.push(tempRowHTML);
+  }
+  finalHTMLArray.push('</table>')
+  console.log(finalHTMLArray.join(""))
+  return (finalHTMLArray.join(''));
+ }
+ window.onload = function(){
+ let container = document.getElementById('wrapper');
+ console.log("I'm the div ", container)
+ container.innerHTML = fromJSONToHTMLTable(['[{"Name":"Tomatoes &\ Chips","Price":2.35},{"Name":"J&B Chocolate","Price":0.96}]']);
+ };
+ </script>
+</body>
+</html>
