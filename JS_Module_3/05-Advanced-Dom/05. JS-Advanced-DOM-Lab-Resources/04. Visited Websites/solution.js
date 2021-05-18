@@ -1,28 +1,27 @@
 function solve() {
-  //let myCounter = 1
+  let myCounter = {};
   let divLinksArray = document.getElementsByClassName('link-1');
-  let divLink = divLinksArray[0];
-  //console.log(divLink);
 
   for (eachElement of divLinksArray) {
-    console.log("each array is ", eachElement);
+    console.log("each element is ", eachElement);
+    let tempSiteName = eachElement.children[0].innerText;
+    let tempSiteCount = eachElement.children[1].innerText.split(" ")[1];
+    myCounter[tempSiteName] = +tempSiteCount;
+
+    // Add event listener for each element. 
     eachElement.addEventListener("click", iWasClicked);
+    console.log(tempSiteName, tempSiteCount);
   }
+
+  console.log("My counter is " , myCounter);
 
   function iWasClicked() {
     console.log("The button was clicked!", this);
-
-    // Run loops, methods, make variables all the normal JS
+    let tempSiteClicked = this.children[0].innerText;
+    myCounter[tempSiteClicked]++;
+    let countToUpdate = myCounter[tempSiteClicked];
+    const numToReplace = /\d+/m;
+    let newCount = this.children[1].innerText.replace(numToReplace, countToUpdate);
+    this.children[1].innerText = newCount;
   }
-  // divLink.addEventListener("click", function() { 
-
-  //   // I am a function that will execute when the action above happens. 
-  //   // The action is click, I'm attached to the first div
-
-  //   let divLinkPTag = divLinksArray[0].children[1];
-  //   divLinkPTag.textContent = `visited ${myCounter} times`
-  //   myCounter++;
-  //   console.log("Function ran the count is ", myCounter)
-  // });
-  
 }
