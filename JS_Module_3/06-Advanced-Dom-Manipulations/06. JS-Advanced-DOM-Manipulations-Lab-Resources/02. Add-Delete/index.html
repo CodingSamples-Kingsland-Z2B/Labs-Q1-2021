@@ -9,9 +9,12 @@
   </head>
 
   <body>
-    <h1>List of Items</h1>
+    <h1>Interact with my HTML, makes it alive!</h1>
     <main>
-      <ul id="items"></ul>
+      <ul id="items">
+        <li id="id_to_use_to_grab">Some Text [ <a onclick="deleteLI()">Delete</a> ]</li>
+        <li><button>I just change it literally.</button></li>
+      </ul>
       <input type="text" id="newText" />
       <input type="button" value="Add" onclick="addItem()" />
     </main>
