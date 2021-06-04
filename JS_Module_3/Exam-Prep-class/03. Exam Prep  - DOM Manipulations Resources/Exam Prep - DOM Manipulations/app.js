@@ -3,7 +3,7 @@ function encodeAndDecodeMessages() {
   const receiveMsgBox = document.getElementsByTagName('textarea')[1];
   const buttonEncode = document.querySelector('button');
   const buttonDecode = document.getElementsByTagName('button')[1];
-  
+  console.log(messageToEncodeBox)
   // ES 6 way
   //const [messageToEncodeBox, recieveMsgBox] = document.getElementsByTagName('textarea');
 
@@ -27,5 +27,6 @@ function encodeAndDecodeMessages() {
      .join("");
      console.log(decodedMsg);
      receiveMsgBox.value = decodedMsg;
+     
   }
 }

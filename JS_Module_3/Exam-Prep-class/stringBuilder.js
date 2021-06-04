@@ -21,7 +21,7 @@ class StringBuilder {
     if (typeof someInput === "string") {
     this.newString = someInput.split(""); // original array when we made the object 
     } else {
-       throw new TypeError("TypeError: Argument must be a string");
+       throw "TypeError:'Argument must be string'";
     }
   }
   append(stringToAdd) {
@@ -29,20 +29,19 @@ class StringBuilder {
     if (typeof stringToAdd === "string") {
       this.newString = this.newString.concat(stringToAdd.split(""));
     } else { 
-       throw new TypeError("Argument must be a string");
+       throw "TypeError:'Argument must be string'";
     }
   }
 
   prepend(stringToAdd) {
-    try {
     if (typeof stringToAdd === "string") {
       this.newString = stringToAdd.split("").concat(this.newString);
-    } else {
-       throw new TypeError("Argument must be a string");
-    } }
-    catch (error) {
-      console.log(error)
     }
+     else {
+        throw "TypeError:'Argument must be string'";
+    } 
+
+   
   }
 
   insertAt(stringToAdd, index) {
@@ -51,7 +50,7 @@ class StringBuilder {
         this.newString.splice(index,0, ...tempArray);
         //console.log("My new new string is ", this.newString);
      } else {
-       throw new TypeError("Argument must be a string");
+       throw "TypeError:'Argument must be string'";
      }
   }
 
@@ -87,9 +86,7 @@ try { let str = new StringBuilder('hello');
    str.append(', there'); 
    str.prepend(28);
    console.log(str.toString()); } 
-catch(e) { 
-   console.log(e) 
-}
+catch(e) { console.log(e) }
 
 // let str = new StringBuilder("Hello"); 
 // str.append(', there'); 
