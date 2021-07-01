@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Handlebars</title>
+  <!-- Include Handlebars distribution -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <h1>Example 1 from the slides</h1>
+  <div id="app"></div>
+
+  <div id="someFunction"></div>
+  <h1>Example 2 from the slides</h1>
+  <div id="contactDIV"></div>
+
+  <div id="someFunction"></div>
+  <h1>{{#each }} Example</h1>
+  <div id="eachDIV"></div>
+
+  <script id="contact-template" type="text/x-handlebars-template">
+  <article>
+    <div class="title">
+{{name}}
+      <button>&#8505;</button>
+    </div>
+<div class="info">
+<span>&phone; {{phone}}</span> <span>&#9993; {{email}}</span>
+</div> </article>
+</script>
+
+  <script src="./script.js"></script>
+
+</body>
+
+</html>
